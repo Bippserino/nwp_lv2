@@ -5,10 +5,8 @@ $encrypted_files = glob("*.enc");
 // Iteriranje kroz sve kriptirane datoteke
 foreach ($encrypted_files as $encrypted_file) {
     // Dekriptiranje datoteke
-    $key = md5('jed4n j4k0 v3l1k1 kljuc');    
-
-    $cipher = "AES-128-CTR";
-    $iv_length = openssl_cipher_iv_length($cipher); 
+    $key = md5('jed4n j4k0 v3l1k1 kljuc');
+    $cipher = "AES-128-CTR"; 
     $options = 0; 
     $encryption_iv = "123456789"; 
     $decrypted_content = openssl_decrypt(file_get_contents($encrypted_file), $cipher, $key, $options, $encryption_iv);

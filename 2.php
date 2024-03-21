@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"])) {
         // Kriptiranje datoteke
         $cipher_method =  "AES-128-CTR";
         $encryption_key = md5('jed4n j4k0 v3l1k1 kljuc');
-        // $iv_length = openssl_cipher_iv_length($cipher_method); 
         $encryption_iv = "123456789";  
         $options = 0; 
         $encrypted_content = openssl_encrypt(file_get_contents($target_file), $cipher_method, $encryption_key, $options, $encryption_iv);
